@@ -1,0 +1,11 @@
+<!-- <button type="button" (click)="authService.loginWithRedirect()" class="btn btn-outline-primary">Log in</button> -->
+
+<ng-container *ngIf="authService.isAuthenticated$ | async; else loggedOut">
+    <button (click)="authService.logout({ returnTo: document.location.origin })" class="btn btn-outline-primary">
+      Log out
+    </button>
+</ng-container>
+
+<ng-template #loggedOut>
+    <button (click)="authService.loginWithRedirect()" class="btn btn-outline-primary">Log in</button>
+</ng-template>

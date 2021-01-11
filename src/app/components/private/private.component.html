@@ -1,1 +1,7 @@
-<p>private works!</p>
+<h1>User Profile</h1>
+<hr>
+<pre *ngIf="authService.user$ | async as user">
+
+    <code>{{ user | json}}</code>
+
+</pre>
